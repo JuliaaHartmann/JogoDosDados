@@ -1,4 +1,6 @@
-﻿namespace JogoDosDados.ConsoleApp
+﻿using System.Security.Cryptography;
+
+namespace JogoDosDados.ConsoleApp
 
 /*
 1. Pista:
@@ -25,7 +27,29 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            while(true)
+            {
+                Console.Clear();
+                Console.WriteLine("------------------------------------------------------");
+                Console.WriteLine("Jogo dos Dados");
+                Console.WriteLine("------------------------------------------------------");
+            
+                // Lógica do Jogo
+                Console.Write("Presione ENTER para lançar o dado...");
+                Console.ReadLine();
+
+                int resultado = RandomNumberGenerator.GetInt32(1, 7);
+
+                Console.WriteLine("------------------------------------------------------");
+                Console.WriteLine($"O número sorteado foi: {resultado}");
+                Console.WriteLine("------------------------------------------------------");
+            
+                Console.Write("Deseja continuar? (S/N): ");
+                string? opcaoContinuar = Console.ReadLine()?.ToUpper();
+
+                if (opcaoContinuar != "S")
+                    break;
+            }
         }
     }
 }
