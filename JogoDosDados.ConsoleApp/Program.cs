@@ -1,6 +1,6 @@
 ﻿using System.Security.Cryptography;
 
-namespace JogoDosDados.ConsoleApp
+namespace JogoDosDados.ConsoleApp;
 
 /*
 1. Pista:
@@ -22,13 +22,19 @@ namespace JogoDosDados.ConsoleApp
     - O primeiro competidor a alcançar ou ultrapassar a posição final (ex.: 30) vence o jogo.
 */
 
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
+        const int limiteLinhaChegada = 30;
+
+        while(true)
         {
-            while(true)
-            {
+            int posicaoJogador = 0;
+            bool jogoEstaEmAndamento = true;
+
+            while(jogoEstaEmAndamento)
+            {                        
                 Console.Clear();
                 Console.WriteLine("------------------------------------------------------");
                 Console.WriteLine("Jogo dos Dados");
@@ -43,13 +49,27 @@ namespace JogoDosDados.ConsoleApp
                 Console.WriteLine("------------------------------------------------------");
                 Console.WriteLine($"O número sorteado foi: {resultado}");
                 Console.WriteLine("------------------------------------------------------");
-            
-                Console.Write("Deseja continuar? (S/N): ");
-                string? opcaoContinuar = Console.ReadLine()?.ToUpper();
 
-                if (opcaoContinuar != "S")
-                    break;
+                posicaoJogador += resultado;
+
+                if (posicaoJogador < limiteLinhaChegada)
+                    Console.WriteLine($"Você está na posição {posicaoJogador} de {limiteLinhaChegada}");
+                else
+                {
+                    Console.WriteLine("Parabéns! Você alcançou a linha de chegada!");
+
+                    jogoEstaEmAndamento = false;
+                }
+
+                Console.Write("Pressione ENTER para continuar...");
+                Console.ReadLine();
             }
+
+            Console.Write("Deseja continuar? (S/N): ");
+            string? opcaoContinuar = Console.ReadLine()?.ToUpper();
+
+            if (opcaoContinuar != "S")
+                break;
         }
     }
 }
