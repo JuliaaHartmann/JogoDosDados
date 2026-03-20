@@ -14,10 +14,13 @@ Regras do Jogo
 4. Eventos especiais ocorrem em determinadas posições:
 
 - Avanço extra (+3 casas):
-  - Posições: 5, 10, 15, 25
+  - Posições: 5, 10, 15, 25.
 
 - Recuo (-2 casas):
-  - Posições: 7, 13, 20
+  - Posições: 7, 13, 20.
+
+- Rodada extra: 
+  - Se o competidor tirar 6 no dado, ele ganha uma rodada extra.
 
 5. O primeiro a alcançar ou ultrapassar a linha de chegada vence.
 
