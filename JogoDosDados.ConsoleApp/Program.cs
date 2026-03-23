@@ -1,18 +1,10 @@
 ﻿using System.Security.Cryptography;
 
 namespace JogoDosDados.ConsoleApp;
+
 class Program
 {
     static void Main(string[] args)
-    {
-        const int limiteLinhaChegada = 30;
-        const int bonusAvancoExtra = 3;
-        const int penalidadeRecuo = 2;
-
-        ExecutarPartida(limiteLinhaChegada, bonusAvancoExtra, penalidadeRecuo);
-    }
-
-    static void ExecutarPartida(int limiteLinhaChegada, int bonusAvancoExtra, int penalidadeRecuo)
     {
         while (true)
         {
@@ -35,7 +27,7 @@ class Program
                 break;
         }
     }
-    
+
     static void InicializarPartida()
     {
         Jogador.posicao = 0;
